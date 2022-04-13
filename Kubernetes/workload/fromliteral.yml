@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cm1
+data:
+  DB_HOST: 198.127.0.0
+  USER: admin

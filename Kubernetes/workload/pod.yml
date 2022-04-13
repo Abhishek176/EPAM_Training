@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp3
+  labels:
+    app: myapp3
+    tier: backend
+spec:
+  serviceAccount: demo
+  containers:
+  - name: nginx-container
+    image: nginx
+  restartPolicy: Always

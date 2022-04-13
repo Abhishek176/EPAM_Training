@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+      # tolerations:
+      # -  effect: NoSchedule
+      #    key: size
+      #    operator: Equal
+      #    value: large
+      # tolerations:
+      # -  effect: PreferNoSchedule
+      #    key: size
+      #    operator: Equal
+      #    value: large
+      # tolerations:
+      # -  effect: NoSchedule
+      #    key: size
+      #    operator: Exists
+      # tolerations:
+      # -  effect: "*"
+      #    key: size
+      #    operator: Equal
+      #    value: large
+      # tolerations:
+      # -  effect: "*"
+      #    key: size
+      #    operator: Exists
+          
+
+# kubectl taint node pool-jy7jniun0-c71dh size=large:NoSchedule/PreferNoSchedule/NoExecute
